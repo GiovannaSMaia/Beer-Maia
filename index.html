@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cervejaria Beer Maia — conheça a história, a cultura cervejeira e o catálogo da cervejaria artesanal.">
+    <title>Cervejaria Beer Maia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <label for="menu-toggle" class="menu-button" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <label for="menu-toggle" class="menu-overlay" aria-label="Fechar menu"></label>
+
+    <aside class="side-menu">
+        <div class="side-menu__top">
+            <span class="brand-mini">BEER MAIA</span>
+            <h2>Navegação</h2>
+        </div>
+
+        <nav class="side-menu__nav">
+            <a href="#inicio">Início</a>
+            <a href="#historia">História</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        
+        <!-- Botão chamando a nova classe do CSS -->
+        <a class="button button--primary side-menu__btn" href="catalogo.html">Catálogo</a>
+
+        <div class="side-menu__bottom">
+            <span>Cervejaria artesanal independente</span>
+        </div>
+    </aside>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero__content">
+                <p class="eyebrow">CERVEJARIA ARTESANAL • SÃO BERNARDO DO CAMPO</p>
+                <h1>
+                    Uma cerveja com
+                    <span>história para contar.</span>
+                </h1>
+                <p class="hero__description">
+                    Conheça a Cervejaria Beer Maia, sua trajetória e a cultura por trás dos estilos de cerveja que fazem parte do nosso catálogo.
+                </p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="#historia">Conheça nossa história</a>
+                    <a class="button button--outline" href="catalogo.html">Conheça o catálogo</a>
+                </div>
+                <div class="hero__facts">
+                    <div>
+                        <strong>2019</strong>
+                        <span>início da Beer Maia</span>
+                    </div>
+                    <div>
+                        <strong>Artesanal</strong>
+                        <span>produção em pequena escala</span>
+                    </div>
+                    <div>
+                        <strong>Beer Maia</strong>
+                        <span>produção independente</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__art" aria-hidden="true">
+                <div class="hero__halo hero__halo--one"></div>
+                <div class="hero__halo hero__halo--two"></div>
+                <div class="hero__grain"></div>
+
+                <div class="bottle">
+                    <div class="bottle__cap"></div>
+                    <div class="bottle__neck"></div>
+                    <div class="bottle__body">
+                        <div class="bottle__label">
+                            <span>DESDE</span>
+                            <strong>BEER<br>MAIA</strong>
+                            <small>CERVEJARIA ARTESANAL</small>
+                            <i>2019</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass">
+                    <div class="glass__foam"></div>
+                    <div class="glass__beer"></div>
+                </div>
+
+                <div class="hero__seal">
+                    <span>PEQUENA</span>
+                    <strong>PRODUÇÃO</strong>
+                    <span>INDEPENDENTE</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro section">
+            <div class="intro__line"></div>
+            <div class="intro__content">
+                <p class="eyebrow">MAIS DO QUE UMA BEBIDA</p>
+                <h2>Uma página para conhecer a marca antes de conhecer o rótulo.</h2>
+                <p>
+                    A Beer Maia utiliza atualmente Instagram e WhatsApp para divulgação e atendimento. Esta página reúne essas informações em um espaço próprio, facilitando o acesso à marca, à história e aos produtos.
+                </p>
+            </div>
+        </section>
+
+        <section id="historia" class="history section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">HISTÓRIA</p>
+                    <h2>A cultura da cerveja atravessa séculos.</h2>
+                </div>
+                <p>
+                    A seção apresenta estilos e tradições que ajudam a entender como diferentes regiões desenvolveram suas próprias características cervejeiras.
+                </p>
+            </div>
+
+            <div class="history-feature">
+                <div class="history-feature__label">A BEER MAIA</div>
+                <div class="history-feature__text">
+                    <h3>De um projeto acadêmico para uma produção artesanal independente.</h3>
+                    <p>
+                        A Cervejaria Beer Maia surgiu em 2019 a partir de um projeto acadêmico desenvolvido pelo filho do fundador durante o curso de Engenharia de Alimentos. Após a conclusão do trabalho, a produção continuou de forma independente, primeiro como hobby e depois também como fonte complementar de renda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="style-grid">
+                <article class="style-card style-card--dark">
+                    <span>01</span>
+                    <small>ALEMANHA</small>
+                    <h3>Dunkel</h3>
+                    <p>
+                        Cerveja de baixa fermentação, associada à tradição das cervejas escuras alemãs e ao sabor de malte torrado.
+                    </p>
+                </article>
+
+                <article class="style-card">
+                    <span>02</span>
+                    <small>BOÊMIA / REPÚBLICA TCHECA</small>
+                    <h3>Pilsen</h3>
+                    <p>
+                        Estilo leve de baixa fermentação, ligado à tradição cervejeira da Boêmia e conhecido pela sua ampla popularização.
+                    </p>
+                </article>
+
+                <article class="style-card">
+                    <span>03</span>
+                    <small>MUNIQUE</small>
+                    <h3>Munich Helles</h3>
+                    <p>
+                        Estilo de perfil suave, relacionado à tradição de Munique e apresentado no projeto como criação da Spaten em 1894.
+                    </p>
+                </article>
+
+                <article class="style-card">
+                    <span>04</span>
+                    <small>BAVIERA</small>
+                    <h3>Weiss</h3>
+                    <p>
+                        Estilo de cerveja de trigo associado à tradição cervejeira da Baviera.
+                    </p>
+                </article>
+
+                <article class="style-card style-card--dark">
+                    <span>05</span>
+                    <small>INGLATERRA</small>
+                    <h3>Stout</h3>
+                    <p>
+                        Estilo inglês de cerveja forte e encorpada, apresentado no projeto como surgido no século XVIII.
+                    </p>
+                </article>
+
+                <article class="style-card style-card--quote">
+                    <span>BEER CULTURE</span>
+                    <blockquote>
+                        Cada estilo carrega parte da história, dos ingredientes e das escolhas de uma região.
+                    </blockquote>
+                </article>
+            </div>
+        </section>
+
+        <section class="catalog-cta section">
+            <div class="catalog-cta__text">
+                <p class="eyebrow">PRÓXIMO PASSO</p>
+                <h2>Quer conhecer os rótulos?</h2>
+                <p>
+                    Acesse o catálogo para visualizar as cervejas e consultar as informações de cada produto.
+                </p>
+            </div>
+            <a class="button button--primary" href="catalogo.html">Ir para o catálogo</a>
+        </section>
+
+        <section id="contato" class="contact section">
+            <div class="contact__intro">
+                <p class="eyebrow">CONTATO</p>
+                <h2>Fale com a Beer Maia.</h2>
+                <p>
+                    Para conhecer a cervejaria, tirar dúvidas ou continuar o atendimento, utilize os canais oficiais abaixo.
+                </p>
+            </div>
+
+            <div class="contact__cards">
+                <a class="contact-card" href="https://wa.me/5511970183467" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-card__icon">WA</span>
+                    <div>
+                        <small>WhatsApp</small>
+                        <strong>+55 11 97018-3467</strong>
+                    </div>
+                </a>
+
+                <a class="contact-card" href="https://www.instagram.com/beer_maia/" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-card__icon">IG</span>
+                    <div>
+                        <small>Instagram</small>
+                        <strong>@beer_maia</strong>
+                    </div>
+                </a>
+
+                <div class="contact-card">
+                    <span class="contact-card__icon">SP</span>
+                    <div>
+                        <small>Endereço</small>
+                        <strong>Rua Vinte de Agosto, 187 — Vila Vitória, São Bernardo do Campo</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <strong>BEER MAIA</strong>
+            <span>Cervejaria artesanal independente.</span>
+        </div>
+        <span>Projeto acadêmico • 2026</span>
+    </footer>
+
+    <!-- Botão de Voltar ao Topo -->
+    <a href="#" class="scroll-top-btn" aria-label="Voltar ao topo">↑</a>
+
+    <!-- Script para monitorar a rolagem -->
+    <script>
+        const scrollTopBtn = document.querySelector('.scroll-top-btn');
+
+        window.addEventListener('scroll', () => {
+            // Se rolar mais de 400 pixels para baixo (aproximadamente 2 rolagens), a bolinha aparece
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
