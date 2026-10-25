@@ -26,6 +26,7 @@
     let lastFrame = null;
     let cameraFrom = scrollY;
     let cameraTarget = scrollY;
+    let capSize = 56;
 
     const clamp = (n, min = 0, max = 1) => Math.max(min, Math.min(max, n));
     const lerp = (a, b, t) => a + (b - a) * t;
@@ -40,12 +41,14 @@
         const rect = docRect(scene);
         const mouth = docRect(scene.querySelector('.bottle-scene__mouth'));
         const viewportWidth = root.clientWidth;
-        const safeX = x => clamp(x, 24, viewportWidth - 24);
+        const safeX = x => clamp(x, capSize / 2 + 3, viewportWidth - capSize / 2 - 3);
         const mobile = viewportWidth <= 680;
         const maxScroll = Math.max(1, root.scrollHeight - innerHeight);
         // Project the cutout's mouth after the tilt so the liquid stays connected
         // at every aspect ratio. Asset bounds: y=11..1524 in a 1536px image.
         const bottleHeight = rect.height * .76;
+        capSize = Math.round(Math.min(rect.width, bottleHeight * 2 / 3) * .18);
+        root.style.setProperty('--cap-size', `${capSize}px`);
         const neckDelta = bottleHeight * (11 / 1536 - .76);
         const angle = -104 * Math.PI / 180;
         const neckX = rect.width * .8 - neckDelta * Math.sin(angle);
@@ -61,7 +64,7 @@
         const add = (el, side = 'right', offset = 0) => {
             if (!el) return;
             const r = docRect(el);
-            const x = mobile ? (side === 'right' ? viewportWidth - 23 : 23) : safeX(side === 'right' ? r.right + 24 : r.left - 24);
+            const x = mobile ? safeX(side === 'right' ? viewportWidth : 0) : safeX(side === 'right' ? r.right + 24 : r.left - 24);
             const y = r.top + Math.min(r.height * .3, 140) + offset;
             const position = clamp(y - innerHeight * .62, 0, maxScroll);
             if (position > nodes.at(-1).scroll + 1) nodes.push({ x, y, scroll: position });
@@ -82,7 +85,7 @@
     }
 
     function place(x, y, rotation, scale = 1) {
-        cap.style.transform = `translate3d(${(x - 20).toFixed(2)}px, ${(y - scrollY - 20).toFixed(2)}px, 0) rotate(${rotation.toFixed(2)}deg) scale(${scale})`;
+        cap.style.transform = `translate3d(${(x - capSize / 2).toFixed(2)}px, ${(y - scrollY - capSize / 2).toFixed(2)}px, 0) rotate(${rotation.toFixed(2)}deg) scale(${scale})`;
     }
 
     function followScroll() {
@@ -113,7 +116,7 @@
         const flowIn = clamp((time - 2450) / 450);
         const flowOut = 1 - clamp((time - 3450) / 550);
         scene.style.setProperty('--pour', String(Math.min(flowIn, flowOut)));
-        place(lerp(start.x, landing.x, easeOut(flight)), lerp(start.y, landing.y, flight) - Math.sin(Math.PI * flight) * Math.min(200, innerHeight * .23), flight * 390, lerp(.85, 1, flight));
+        place(lerp(start.x, landing.x, easeOut(flight)), lerp(start.y, landing.y, flight) - Math.sin(Math.PI * flight) * Math.min(200, innerHeight * .23), flight * 390);
     }
 
     function render(timestamp) {
