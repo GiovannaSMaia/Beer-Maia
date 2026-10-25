@@ -69,33 +69,21 @@
                 </div>
             </div>
 
-            <div class="hero__art" aria-hidden="true">
-                <div class="hero__halo hero__halo--one"></div>
-                <div class="hero__halo hero__halo--two"></div>
-                <div class="hero__grain"></div>
-
-                <div class="bottle">
-                    <div class="bottle__cap"></div>
-                    <div class="bottle__neck"></div>
-                    <div class="bottle__body">
-                        <div class="bottle__label">
-                            <span>DESDE</span>
-                            <strong>BEER<br>MAIA</strong>
-                            <small>CERVEJARIA ARTESANAL</small>
-                            <i>2019</i>
-                        </div>
-                    </div>
+            <div class="label-showcase" role="region" aria-label="Rótulos Beer Maia" aria-roledescription="carrossel" data-active="0">
+                <div class="label-showcase__heading"><span>IDENTIDADE EM CADA RÓTULO</span><span>BEER MAIA / 2019</span></div>
+                <div class="label-showcase__stage">
+                    <span class="label-showcase__word" aria-hidden="true">MAIA</span>
+                    <div class="label-slide is-active" aria-hidden="false"><img src="images/labels/red-ale.webp" alt="Rótulo original Beer Maia Red Ale" fetchpriority="high"></div>
+                    <div class="label-slide" aria-hidden="true"><img src="images/labels/preta.webp" alt="Rótulo original Beer Maia Preta"></div>
+                    <div class="label-slide" aria-hidden="true"><img src="images/labels/pessego.webp" alt="Rótulo original Beer Maia Pêssego"></div>
+                    <span class="label-showcase__edition">AUTÊNTICA.<br>ARTESANAL.<br>BEER MAIA.</span>
                 </div>
-
-                <div class="glass">
-                    <div class="glass__foam"></div>
-                    <div class="glass__beer"></div>
-                </div>
-
-                <div class="hero__seal">
-                    <span>PEQUENA</span>
-                    <strong>PRODUÇÃO</strong>
-                    <span>INDEPENDENTE</span>
+                <div class="label-showcase__caption"><div><span class="label-showcase__kicker">CONHEÇA NOSSOS RÓTULOS</span><h2 id="featured-label">Red Ale</h2></div><a href="catalogo.html">Explorar <span aria-hidden="true">↗</span></a></div>
+                <div class="label-showcase__controls" role="group" aria-label="Escolha um rótulo">
+                    <button type="button" class="label-choice is-active" aria-pressed="true" data-slide="0"><span>01</span> Red Ale</button>
+                    <button type="button" class="label-choice" aria-pressed="false" data-slide="1"><span>02</span> Preta</button>
+                    <button type="button" class="label-choice" aria-pressed="false" data-slide="2"><span>03</span> Pêssego</button>
+                    <button type="button" class="label-pause" aria-label="Pausar troca automática" aria-pressed="false">Ⅱ</button>
                 </div>
             </div>
         </section>
@@ -259,5 +247,6 @@
             }
         });
     </script>
+    <script src="label-showcase.js"></script>
 </body>
 </html>
