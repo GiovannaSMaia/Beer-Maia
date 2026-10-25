@@ -21,6 +21,11 @@
     let landing = { x: 0, y: 0 };
     let stopBounds = [];
     let pageHeight = 0;
+    let autoScroll = !motion.matches;
+    let autoPosition = scrollY;
+    let lastFrame = null;
+    let cameraFrom = scrollY;
+    let cameraTarget = scrollY;
 
     const clamp = (n, min = 0, max = 1) => Math.max(min, Math.min(max, n));
     const lerp = (a, b, t) => a + (b - a) * t;
@@ -45,24 +50,14 @@
         const angle = -104 * Math.PI / 180;
         const neckX = rect.width * .8 - neckDelta * Math.sin(angle);
         const neckY = rect.height * .07 + bottleHeight * .76 + neckDelta * Math.cos(angle) - bottleHeight * .1;
-        const poolY = rect.height * .86;
-        const poolX = clamp(neckX + 95, 85, rect.width - 85);
+        const flowBottom = rect.height + 180;
         const spill = scene.querySelector('.beer-spill');
         spill.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
-        spill.querySelector('.beer-spill__stream').setAttribute('d', `M ${neckX} ${neckY} C ${neckX - 30} ${neckY + 20}, ${neckX - 20} ${poolY - 30}, ${poolX} ${poolY}`);
-        spill.querySelector('.beer-spill__highlight').setAttribute('d', `M ${neckX + 2} ${neckY} C ${neckX - 26} ${neckY + 20}, ${neckX - 15} ${poolY - 30}, ${poolX} ${poolY}`);
-        const pool = spill.querySelector('.beer-spill__pool');
-        pool.setAttribute('cx', String(poolX));
-        pool.setAttribute('cy', String(poolY));
-        pool.setAttribute('rx', String(Math.min(80, rect.width * .2)));
-        pool.style.transformOrigin = `${poolX}px ${poolY}px`;
-        spill.querySelectorAll('.beer-spill__drops circle').forEach((drop, i) => {
-            drop.setAttribute('cx', String(poolX - 65 + i * 42));
-            drop.setAttribute('cy', String(poolY - 8 - (i % 2) * 13));
-        });
+        spill.querySelector('.beer-spill__stream').setAttribute('d', `M ${neckX} ${neckY} C ${neckX - 35} ${neckY + 32}, ${neckX - 30} ${neckY + 100}, ${neckX - 18} ${neckY + 160} S ${neckX - 9} ${flowBottom - 70}, ${neckX - 16} ${flowBottom}`);
+        spill.querySelector('.beer-spill__highlight').setAttribute('d', `M ${neckX + 2} ${neckY} C ${neckX - 29} ${neckY + 32}, ${neckX - 25} ${neckY + 100}, ${neckX - 14} ${neckY + 160} S ${neckX - 5} ${flowBottom - 70}, ${neckX - 12} ${flowBottom}`);
         start = { x: mouth.left, y: mouth.top };
-        landing = { x: safeX(rect.right - 25), y: rect.top + rect.height * .80 };
-        nodes = [{ x: landing.x, y: landing.y, scroll: 0 }];
+        landing = { x: safeX(rect.left + neckX - 25), y: rect.top + rect.height * .88 };
+        nodes = [{ x: landing.x, y: landing.y, scroll: Math.min(cameraTarget, maxScroll) }];
         const add = (el, side = 'right', offset = 0) => {
             if (!el) return;
             const r = docRect(el);
@@ -118,27 +113,41 @@
         const flowIn = clamp((time - 2450) / 450);
         const flowOut = 1 - clamp((time - 3450) / 550);
         scene.style.setProperty('--pour', String(Math.min(flowIn, flowOut)));
-        scene.style.setProperty('--pool', String(clamp((time - 2800) / 800)));
         place(lerp(start.x, landing.x, easeOut(flight)), lerp(start.y, landing.y, flight) - Math.sin(Math.PI * flight) * Math.min(200, innerHeight * .23), flight * 390, lerp(.85, 1, flight));
     }
 
     function render(timestamp) {
         frame = 0;
         if (paused || document.hidden) return;
+        const dt = lastFrame === null ? 0 : Math.min(50, timestamp - lastFrame);
+        lastFrame = timestamp;
         if (opening) {
             if (startTime === null) startTime = timestamp - elapsed;
             elapsed = timestamp - startTime;
+            if (autoScroll && cameraTarget > cameraFrom) {
+                window.scrollTo({ top: lerp(cameraFrom, cameraTarget, smooth(clamp(elapsed / 1200))), behavior: 'instant' });
+            }
             // Scrolling can immediately take control of the cap; never lock the page.
-            if (elapsed >= 4100 || Math.abs(scrollY - openingScroll) > 180) {
+            if (elapsed >= 4100 || (!autoScroll && Math.abs(scrollY - openingScroll) > 180)) {
                 opening = false;
                 drawOpening(4100);
                 replay.hidden = false;
                 followScroll();
+                autoPosition = scrollY;
             } else {
                 drawOpening(elapsed);
                 frame = requestAnimationFrame(render);
             }
-        } else followScroll();
+        } else {
+            if (autoScroll) {
+                const end = Math.max(0, root.scrollHeight - innerHeight);
+                autoPosition = Math.min(end, autoPosition + dt * .115);
+                window.scrollTo({ top: autoPosition, behavior: 'instant' });
+                if (autoPosition >= end) autoScroll = false;
+            }
+            followScroll();
+        }
+        if (autoScroll && !frame) frame = requestAnimationFrame(render);
     }
 
     function schedule() {
@@ -156,11 +165,14 @@
         toggle.setAttribute('aria-pressed', String(paused));
         toggle.innerHTML = motion.matches ? 'Movimento reduzido' : paused ? 'Ativar animação <span aria-hidden="true">▶</span>' : 'Pausar animação <span aria-hidden="true">Ⅱ</span>';
         startTime = null;
+        lastFrame = null;
         schedule();
     }
 
     toggle.addEventListener('click', () => {
         paused = !paused;
+        autoScroll = !paused;
+        autoPosition = scrollY;
         // OS reduced-motion preference always wins, including manual playback.
         if (motion.matches) paused = true;
         syncMotion();
@@ -171,17 +183,34 @@
         elapsed = 0;
         startTime = null;
         paused = false;
+        autoScroll = true;
+        autoPosition = scrollY;
+        cameraFrom = scrollY;
+        cameraTarget = scrollY;
         openingScroll = scrollY;
         replay.hidden = true;
         measure();
         syncMotion();
     });
-    motion.addEventListener('change', () => { paused = motion.matches; syncMotion(); });
+    motion.addEventListener('change', () => { paused = motion.matches; autoScroll = false; syncMotion(); });
+    const releaseCamera = () => {
+        autoScroll = false;
+        lastFrame = null;
+    };
+    addEventListener('wheel', releaseCamera, { passive: true });
+    addEventListener('touchstart', releaseCamera, { passive: true });
+    addEventListener('pointerdown', event => {
+        if (!event.target.closest('.journey-motion, .journey-replay')) releaseCamera();
+    }, { passive: true });
+    addEventListener('keydown', event => {
+        if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) releaseCamera();
+    });
     addEventListener('scroll', schedule, { passive: true });
     addEventListener('resize', () => { measure(); schedule(); }, { passive: true });
     addEventListener('pageshow', () => { measure(); schedule(); });
     document.addEventListener('visibilitychange', () => {
         startTime = null;
+        lastFrame = null;
         if (document.hidden) { cancelAnimationFrame(frame); frame = 0; }
         else schedule();
     });
@@ -197,6 +226,9 @@
         measure();
         toggle.hidden = false;
         const sceneRect = scene.getBoundingClientRect();
+        cameraFrom = scrollY;
+        cameraTarget = sceneRect.bottom > innerHeight ? Math.min(root.scrollHeight - innerHeight, Math.max(scrollY, sceneRect.top + scrollY - innerHeight * .15)) : scrollY;
+        measure();
         if (sceneRect.bottom < 0) {
             opening = false;
             replay.hidden = false;
@@ -214,6 +246,12 @@
                 syncMotion();
             }, { threshold: .35 });
             entrance.observe(scene);
+            if (autoScroll && !motion.matches) {
+                entrance.disconnect();
+                ready = true;
+                openingScroll = scrollY;
+                syncMotion();
+            }
             if (paused) syncMotion();
         }
     }

@@ -3,7 +3,6 @@
     --tip: 0deg;
     --tilt-progress: 0;
     --pour: 0;
-    --pool: 0;
     position: relative;
     width: 100%;
     min-width: 0;
@@ -63,10 +62,10 @@
 }
 .journey-enabled .bottle-scene__attached-cap { visibility: hidden; }
 .beer-spill { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.beer-spill__stream { fill: none; stroke: url(#beer-flow); stroke-width: 14; stroke-linecap: round; stroke-dasharray: 200; stroke-dashoffset: calc(200 * (1 - var(--pour))); opacity: var(--pour); }
-.beer-spill__highlight { fill: none; stroke: #ffe8a6; stroke-width: 3; opacity: calc(var(--pour) * .7); }
-.beer-spill__pool { fill: #d6a74d; opacity: calc(var(--pool) * .4); transform: scaleX(var(--pool)); transform-origin: 174px 610px; }
-.beer-spill__drops { fill: #edce86; opacity: var(--pour); }
+.beer-spill__stream { fill: none; stroke: url(#beer-flow); stroke-width: 10; stroke-linecap: round; opacity: var(--pour); }
+.beer-spill__highlight { fill: none; stroke: #ffe8a6; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 28 45; animation: beer-fall .75s linear infinite; opacity: calc(var(--pour) * .55); }
+@keyframes beer-fall { to { stroke-dashoffset: -146; } }
+@media (prefers-reduced-motion: reduce) { .beer-spill__highlight { animation: none; } }
 .bottle-scene__foot { position: absolute; left: 0; right: 0; bottom: 60px; display: flex; align-items: center; justify-content: flex-end; gap: 15px; }
 .journey-replay { border: 1px solid var(--line); background: #171109a6; color: var(--gold-soft); border-radius: 99px; padding: 9px 13px; font: inherit; font-size: .65rem; cursor: pointer; }
 .journey-replay span { margin-left: 6px; }
@@ -122,7 +121,7 @@
 .journey-dock > span:last-child { font-size: .72rem; color: var(--muted); }
 .footer .journey-dock strong { display: block; margin-top: 4px; font-size: .78rem; letter-spacing: .02em; }
 .footer { display: grid; grid-template-columns: 1fr auto; }
-.journey-static .bottle-scene { --tip: 0deg !important; --tilt-progress: 0 !important; --pour: 0 !important; --pool: 0 !important; }
+.journey-static .bottle-scene { --tip: 0deg !important; --tilt-progress: 0 !important; --pour: 0 !important; }
 .journey-static .journey-cap { display: none; }
 .journey-static .bottle-scene__attached-cap { visibility: visible; }
 .journey-cap[hidden], .journey-motion[hidden], .journey-replay[hidden] { display: none; }
@@ -145,7 +144,7 @@
     .footer { grid-template-columns: 1fr; padding-bottom: 70px; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .bottle-scene { --tip: 0deg !important; --tilt-progress: 0 !important; --pour: 0 !important; --pool: 0 !important; }
+    .bottle-scene { --tip: 0deg !important; --tilt-progress: 0 !important; --pour: 0 !important; }
     .journey-cap { display: none; }
     .bottle-scene__attached-cap { visibility: visible !important; }
     .beer-stop__photo img { transition: none; }
