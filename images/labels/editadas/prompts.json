@@ -1,0 +1,46 @@
+{
+  "ferramenta": "image_gen (integrada)",
+  "prompt_base": "Use case: precise-object-edit. Editar a foto alvo preservando fielmente os produtos originais, desenhos, textos, rótulos, cores, imperfeições naturais e formato dos recipientes. Aplicar o estilo aprovado: fundo marrom quase preto liso com gradiente discreto, iluminação quente suave com reflexos âmbar moderados e tampo real de madeira castanha escura de veios discretos. Fotografia natural cuidadosamente editada, evitar aparência de render ou IA, brilho plástico, condensação inventada e nitidez excessiva. Enquadramento equilibrado com produtos inteiros e margens, manter orientação do original. Alterar principalmente fundo e superfície; não redesenhar marcas nem inventar textos. Sombras e reflexos fisicamente coerentes, sem objetos decorativos extras. Instruções específicas: ",
+  "imagens": [
+    {
+      "original": "foto 2.jpeg",
+      "arquivo": "foto-2-editada.png",
+      "instrucoes": "Preservar a taça com desenho e frase COM CERVEJA NÃO HÁ TRISTEZA, sua cerveja turva dourada e a garrafa MAIA KOLSCH à direita. Colocar a taça num apoio pequeno de madeira."
+    },
+    {
+      "original": "foto 3.jpeg",
+      "arquivo": "foto-3-editada.png",
+      "instrucoes": "Preservar as duas garrafas MAIA KOLSCH com seus rótulos distintos. Retirar mãos e ambiente doméstico e dispor as duas garrafas em pé sobre madeira, preservando proporções e identidade. Não adicionar copos."
+    },
+    {
+      "original": "foto 4.jpeg",
+      "arquivo": "foto-4-editada.png",
+      "instrucoes": "Preservar duas garrafas, IPA à frente à esquerda e DUNKEL atrás à direita, tampas e rótulos verdes. Ambas inteiras e apoiadas na madeira. Não adicionar copos."
+    },
+    {
+      "original": "foto 5.jpeg",
+      "arquivo": "foto-5-editada.png",
+      "instrucoes": "Preservar a taça MAIA principal com cerveja dourada, o copo parcial à esquerda e os copos de degustação atrás sobre seu suporte original de madeira. Remover pequenos objetos soltos irrelevantes. Não multiplicar os copos."
+    },
+    {
+      "original": "foto 6.jpeg",
+      "arquivo": "foto-6-editada.png",
+      "instrucoes": "Preservar garrafa MAIA WITBIER com rótulo de gengibre e limão siciliano e copo cheio à esquerda, com cor e espuma originais. Focar nesses dois produtos, retirar copos secundários do fundo. Adicionar pequeno apoio de madeira sob o copo."
+    },
+    {
+      "original": "foto 7.jpeg",
+      "arquivo": "foto-7-editada.png",
+      "instrucoes": "Preservar garrafa MAIA IPA e copo MAIA à esquerda, cerveja dourada com espuma espessa exatamente como original. Retirar produtos secundários do fundo. Adicionar apoio de madeira discreto sob o copo."
+    },
+    {
+      "original": "foto 8 mais importante.jpeg",
+      "arquivo": "foto-8-editada.png",
+      "instrucoes": "Preservar exatamente seis garrafas na mesma ordem e seis copos vazios à frente. Preservar o suporte ORIGINAL comprido de madeira clara, seu formato com cabo à direita e marca BEER MAIA à esquerda. Remover somente o abridor vermelho. Manter identidade e diferenças reais dos rótulos."
+    },
+    {
+      "original": "WhatsApp Image 2026-10-25 at 14.48.08.jpeg",
+      "arquivo": "kolsch-edu-editada.png",
+      "instrucoes": "Preservar garrafa MAIA KOLSCH à direita e copo térmico preto e prata do Corinthians à esquerda com brasão e nome Edu intactos. Manter materiais e proporções reais. Adicionar porta-copo de madeira discreto sob copo térmico."
+    }
+  ]
+}

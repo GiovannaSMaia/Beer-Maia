@@ -1,5 +1,5 @@
 Selected asset: `beer-maia-kolsch-cutout.png` (true alpha transparency).
-The initial generated version is retained as `beer-maia-kolsch.png`.
+The unused initial generated version was removed.
 
 The hero bottle was prepared with the built-in image generation tool from
 `../labels/WhatsApp Image 2026-10-25 at 14.48.08.jpeg`.
