@@ -10,6 +10,7 @@
         active = index;
         showcase.dataset.active = index;
         slides.forEach((slide, i) => {
+            slide.hidden = i !== index;
             slide.classList.toggle('is-active', i === index);
             slide.setAttribute('aria-hidden', String(i !== index));
             choices[i].classList.toggle('is-active', i === index);
