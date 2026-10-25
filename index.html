@@ -6,7 +6,7 @@
     <meta name="description" content="Cervejaria Beer Maia — conheça a história, a cultura cervejeira e o catálogo da cervejaria artesanal.">
     <title>Cervejaria Beer Maia</title>
     <link rel="stylesheet" href="style.css?v=20261025-2">
-    <link rel="stylesheet" href="label-showcase.css?v=20261025-2">
+    <link rel="stylesheet" href="bottle-journey.css?v=20261025-1">
 </head>
 <body>
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -70,22 +70,26 @@
                 </div>
             </div>
 
-            <div class="label-showcase" role="region" aria-label="Rótulos Beer Maia" aria-roledescription="carrossel" data-active="0">
-                <div class="label-showcase__heading"><span>IDENTIDADE EM CADA RÓTULO</span><span>BEER MAIA / 2019</span></div>
-                <div class="label-showcase__stage">
-                    <span class="label-showcase__word" aria-hidden="true">MAIA</span>
-                    <div class="label-slide is-active" aria-hidden="false"><img src="images/labels/red-ale.webp" alt="Rótulo original Beer Maia Red Ale" fetchpriority="high"></div>
-                    <div class="label-slide" aria-hidden="true" hidden><img src="images/labels/preta.webp" alt="Rótulo original Beer Maia Preta"></div>
-                    <div class="label-slide" aria-hidden="true" hidden><img src="images/labels/pessego.webp" alt="Rótulo original Beer Maia Pêssego"></div>
-                    <span class="label-showcase__edition">AUTÊNTICA.<br>ARTESANAL.<br>BEER MAIA.</span>
+            <div class="bottle-scene" aria-label="Garrafa Beer Maia com animação de abertura">
+                <div class="bottle-scene__halo" aria-hidden="true"></div>
+                <span class="bottle-scene__word" aria-hidden="true">MAIA</span>
+                <span class="bottle-scene__eyebrow">ABRA UMA NOVA HISTÓRIA.</span>
+                <div class="bottle-scene__bottle">
+                    <img src="images/experience/beer-maia-kolsch-cutout.png" width="1024" height="1536" alt="Garrafa de cerveja artesanal Beer Maia Kölsch" fetchpriority="high">
                 </div>
-                <div class="label-showcase__caption"><div><span class="label-showcase__kicker">CONHEÇA NOSSOS RÓTULOS</span><h2 id="featured-label">Red Ale</h2></div><a href="catalogo.html">Explorar <span aria-hidden="true">↗</span></a></div>
-                <div class="label-showcase__controls" role="group" aria-label="Escolha um rótulo">
-                    <button type="button" class="label-choice is-active" aria-pressed="true" data-slide="0"><span>01</span> Red Ale</button>
-                    <button type="button" class="label-choice" aria-pressed="false" data-slide="1"><span>02</span> Preta</button>
-                    <button type="button" class="label-choice" aria-pressed="false" data-slide="2"><span>03</span> Pêssego</button>
-                    <button type="button" class="label-pause" aria-label="Pausar troca automática" aria-pressed="false">Ⅱ</button>
-                </div>
+                <span class="bottle-scene__mouth" aria-hidden="true"></span>
+                <span class="bottle-scene__attached-cap" aria-hidden="true"></span>
+                <svg class="beer-spill" viewBox="0 0 600 650" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="beer-flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1ae"/><stop offset=".35" stop-color="#eebd4b"/><stop offset="1" stop-color="#b16413"/></linearGradient>
+                    </defs>
+                    <path class="beer-spill__stream" d="M 54 465 C 34 478, 27 508, 53 536 S 102 572, 138 600"/>
+                    <path class="beer-spill__highlight" d="M 52 466 C 33 484, 37 516, 61 539 S 110 578, 141 600"/>
+                    <ellipse class="beer-spill__pool" cx="174" cy="610" rx="116" ry="18"/>
+                    <g class="beer-spill__drops"><circle cx="27" cy="548" r="5"/><circle cx="88" cy="571" r="4"/><circle cx="58" cy="587" r="7"/><circle cx="244" cy="597" r="4"/></g>
+                </svg>
+                <div class="bottle-scene__foot"><button class="journey-replay" type="button" hidden>Rever abertura <span aria-hidden="true">↻</span></button></div>
+                <a class="bottle-scene__scroll" href="#cervejas"><span aria-hidden="true">↓</span> Siga a tampinha. Descubra sua cerveja.</a>
             </div>
         </section>
 
@@ -176,6 +180,16 @@
             </div>
         </section>
 
+        <section id="cervejas" class="beer-journey section" aria-labelledby="beer-journey-title">
+            <div class="section-heading"><div><p class="eyebrow">A TAMPINHA TROUXE VOCÊ ATÉ AQUI</p><h2 id="beer-journey-title">Cada parada,<br>uma descoberta.</h2></div><p>Rótulos que saem da nossa produção e chegam à sua mesa. Conheça de perto a Beer Maia.</p></div>
+            <div class="beer-journey__grid">
+                <a class="beer-stop" href="catalogo.html" data-beer-stop="Kölsch"><div class="beer-stop__photo"><img src="images/labels/foto%202.jpeg" alt="Garrafa Beer Maia Kölsch ao lado de uma taça de cerveja" loading="lazy" width="1200" height="1600"><span>01 / KÖLSCH</span></div><div class="beer-stop__caption"><h3>Kölsch</h3><span aria-hidden="true">↗</span></div><p>Uma pausa com a assinatura Maia.</p></a>
+                <a class="beer-stop" href="catalogo.html" data-beer-stop="IPA"><div class="beer-stop__photo"><img src="images/labels/foto%207.jpeg" alt="Garrafa Beer Maia IPA e copo com espuma" loading="lazy" width="990" height="1600"><span>02 / IPA</span></div><div class="beer-stop__caption"><h3>IPA</h3><span aria-hidden="true">↗</span></div><p>Personalidade em cada detalhe.</p></a>
+                <a class="beer-stop" href="catalogo.html" data-beer-stop="Weiss"><div class="beer-stop__photo"><img src="images/labels/foto%206.jpeg" alt="Garrafa Beer Maia de trigo ao lado de um copo de cerveja" loading="lazy" width="1200" height="1600"><span>03 / WEISS</span></div><div class="beer-stop__caption"><h3>Weiss</h3><span aria-hidden="true">↗</span></div><p>Feita para bons encontros.</p></a>
+            </div>
+            <figure class="beer-family"><img src="images/labels/foto%208%20mais%20importante.jpeg" alt="Seis garrafas Beer Maia reunidas com copos sobre a mesa" loading="lazy" width="1600" height="1204"><figcaption><span>DA NOSSA PRODUÇÃO PARA A SUA MESA.</span><strong>Muitas histórias.<br>Uma só Maia.</strong></figcaption></figure>
+        </section>
+
         <section class="catalog-cta section">
             <div class="catalog-cta__text">
                 <p class="eyebrow">PRÓXIMO PASSO</p>
@@ -225,6 +239,7 @@
     </main>
 
     <footer class="footer">
+        <a class="journey-dock" href="catalogo.html"><span class="journey-dock__landing" aria-hidden="true"></span><span>A próxima história está no seu copo.<strong>Conheça o catálogo ↗</strong></span></a>
         <div>
             <strong>BEER MAIA</strong>
             <span>Cervejaria artesanal independente.</span>
@@ -248,6 +263,8 @@
             }
         });
     </script>
-    <script src="label-showcase.js?v=20261025-2"></script>
+    <div class="journey-cap" aria-hidden="true" hidden><span class="journey-cap__face"><small>BEER</small><strong>M</strong><small>MAIA</small></span></div>
+    <button class="journey-motion" type="button" hidden aria-pressed="false">Pausar animação <span aria-hidden="true">Ⅱ</span></button>
+    <script src="bottle-journey.js?v=20261025-1"></script>
 </body>
 </html>
