@@ -69,7 +69,7 @@
 .bottle-scene__foot { position: absolute; left: 0; right: 0; bottom: 60px; display: flex; align-items: center; justify-content: flex-end; gap: 15px; }
 .journey-replay { border: 1px solid var(--line); background: #171109a6; color: var(--gold-soft); border-radius: 99px; padding: 9px 13px; font: inherit; font-size: .65rem; cursor: pointer; }
 .journey-replay span { margin-left: 6px; }
-.bottle-scene__scroll { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 14px; align-items: center; justify-content: center; padding: 14px 0; border-top: 1px solid var(--line); font-size: .68rem; color: var(--muted); }
+.bottle-scene__scroll { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 14px; align-items: center; justify-content: center; padding: 8px 0; font-size: .68rem; color: var(--muted); }
 .bottle-scene__scroll > span { color: var(--gold); font-size: 1.2rem; }
 .journey-cap {
     position: fixed;

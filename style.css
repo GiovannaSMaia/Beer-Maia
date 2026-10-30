@@ -1322,3 +1322,126 @@ main {
         background: var(--gold-soft);
     }
 }
+
+/* =========================================
+   PÁGINA PROCESSO DE PRODUÇÃO
+   ========================================= */
+
+.process {
+    padding: 0 0 100px;
+}
+
+.process-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.process-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 28px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: linear-gradient(160deg, var(--panel-2), var(--panel));
+    transition: transform 0.24s ease, border-color 0.24s ease;
+}
+
+    .process-step:hover {
+        transform: translateY(-3px);
+        border-color: rgba(237, 206, 134, 0.38);
+    }
+
+.process-step__number {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.process-step__content h2 {
+    color: var(--cream);
+    font-family: "Playfair Display", serif;
+    font-size: 1.85rem;
+    margin-bottom: 12px;
+}
+
+.process-step__content p {
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.process-step__highlight {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(237, 206, 134, 0.2);
+    color: var(--gold-soft) !important;
+    font-weight: 500;
+}
+
+.process-step--final {
+    background: linear-gradient(135deg, rgba(214, 167, 77, 0.12), var(--panel));
+    border-color: rgba(214, 167, 77, 0.35);
+}
+
+.process-magic {
+    margin-top: 48px;
+    padding: 40px 32px;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(214, 167, 77, 0.15), rgba(22, 17, 9, 0.8));
+}
+
+    .process-magic blockquote {
+        margin-top: 10px;
+        color: var(--cream);
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.5rem, 3vw, 2.3rem);
+        line-height: 1.25;
+    }
+
+@media (max-width: 680px) {
+    .process-step {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px;
+    }
+
+    .process-step__number {
+        font-size: 2.2rem;
+    }
+}
+
+/* Estilo do 6º card transformado em botão/link */
+.style-card--link {
+    cursor: pointer;
+    text-decoration: none;
+    border-color: rgba(214, 167, 77, 0.35);
+}
+
+    .style-card--link:hover {
+        border-color: var(--gold);
+        background: linear-gradient(150deg, #2c2011, #1b130a);
+    }
+
+.style-card__cta-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(237, 206, 134, 0.25);
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.style-card--link:hover .style-card__cta-link span:last-child {
+    transform: translateX(4px);
+    transition: transform 0.2s ease;
+}
