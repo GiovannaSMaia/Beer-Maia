@@ -1445,3 +1445,149 @@ main {
     transform: translateX(4px);
     transition: transform 0.2s ease;
 }
+
+/* Keep content flexible when text wraps or the viewport is narrow. */
+img {
+    max-width: 100%;
+}
+
+.hero > *,
+.section-heading > *,
+.contact > *,
+.catalog-contact > *,
+.process-step > *,
+.contact-card > :last-child {
+    min-width: 0;
+}
+
+.contact-card strong,
+.style-card,
+.process-step,
+.catalog-card,
+.catalog-hero h1 {
+    overflow-wrap: anywhere;
+}
+
+.button {
+    text-align: center;
+    padding-block: 12px;
+}
+
+.catalog-card__info {
+    overflow-y: auto;
+}
+
+@media (max-width: 980px) {
+    .side-menu {
+        width: min(330px, 100%);
+        height: 100%;
+        height: 100dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+
+    .side-menu > * {
+        flex-shrink: 0;
+    }
+
+    .menu-toggle:focus-visible ~ .menu-button {
+        outline: 2px solid var(--gold);
+        outline-offset: 4px;
+    }
+}
+
+@media (max-width: 680px) {
+    .section-heading h2,
+    .contact h2,
+    .catalog-cta h2,
+    .catalog-contact h2 {
+        font-size: clamp(2rem, 8vw, 2.7rem);
+    }
+
+    .catalog-hero h1 {
+        font-size: clamp(2.4rem, 10vw, 3.8rem);
+    }
+
+    .history-feature,
+    .style-card,
+    .catalog-cta,
+    .process-step,
+    .process-magic {
+        padding: 24px 20px;
+    }
+
+    .style-card {
+        min-height: 0;
+    }
+
+    .style-card--link > span {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .style-card__cta-link {
+        gap: 12px;
+    }
+
+    .hero__actions .button,
+    .catalog-cta > .button {
+        width: 100%;
+    }
+
+    .contact-card {
+        gap: 12px;
+        padding: 16px 12px;
+    }
+
+    .catalog-card {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .catalog-bottle-img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .catalog {
+        padding-bottom: 64px;
+    }
+
+    .process {
+        padding-bottom: 64px;
+    }
+}
+
+/* Touch screens must not depend on hover to read a product's details. */
+@media (max-width: 680px), (hover: none), (pointer: coarse) {
+    .catalog-card__info {
+        position: static;
+        margin-top: 20px;
+        padding: 20px 0 0;
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0;
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        pointer-events: auto;
+        overflow: visible;
+    }
+
+    .catalog-card:hover .catalog-card__info,
+    .catalog-card:focus-within .catalog-card__info {
+        transform: none;
+    }
+
+    .catalog-card__footer {
+        display: none;
+    }
+
+    .catalog-card:hover,
+    .catalog-card:hover .catalog-bottle-img {
+        transform: none;
+    }
+}

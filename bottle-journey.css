@@ -149,3 +149,15 @@
     .bottle-scene__attached-cap { visibility: visible !important; }
     .beer-stop__photo img { transition: none; }
 }
+
+@media (max-width: 680px) {
+    .bottle-scene { height: clamp(380px, 125vw, 500px); }
+    .bottle-scene__word { font-size: clamp(4rem, 20vw, 6rem); }
+    .bottle-scene__eyebrow { width: 100%; white-space: normal; text-align: center; }
+    .bottle-scene__scroll { min-height: 44px; text-align: center; }
+    .journey-replay, .journey-motion { min-height: 44px; }
+    .journey-motion { bottom: max(10px, env(safe-area-inset-bottom)); }
+    .beer-journey__grid { padding-inline: 0; }
+    .beer-family figcaption { right: 22px; }
+    .beer-family figcaption span { overflow-wrap: anywhere; }
+}
