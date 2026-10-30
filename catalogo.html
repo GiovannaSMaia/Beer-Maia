@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Catálogo da Cervejaria Beer Maia.">
     <title>Catálogo | Beer Maia</title>
-    <link rel="stylesheet" href="style.css?v=20261030-2">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="catalog-page">
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -24,10 +24,11 @@
             <h2>Navegação</h2>
         </div>
         <nav class="side-menu__nav">
-            <a href="index.html">Início</a>
-            <a href="historia.html">História</a>
-            <a href="processo.html">Produção</a>
-            <a href="contato.html">Contato</a>
+            <a href="index.html#inicio">Início</a>
+            <a href="index.html#historia">História</a>
+            <a href="index.html#processo.html">Produção</a>
+            <a href="index.html#catalogo.html">Catálogo</a>
+            <a href="#contato">Contato</a>
         </nav>
 
          <a class="button button--primary side-menu__btn" href="https://wa.me/5511970183467" target="_blank">Fazer Pedido</a>
@@ -47,7 +48,7 @@
             <div class="catalog-grid">
 
                 <!-- 1. DUNKEL -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img foco-dunkel" src="./images/Dunkel.jpeg" alt="Copo de cerveja Dunkel em cima de um barril de madeira">
                     <h2>Dunkel</h2>
 
@@ -58,13 +59,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-dunkel.html" aria-label="Saiba mais sobre Dunkel">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Dunkel</strong>
+                                <span>Baixa fermentação • Baviera</span>
+                            </div>
+                            <p>Estilo clássico da Baviera de cerveja escura. Apresenta notas marcantes de malte torrado, pão tostado e suave amargor no final.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>5.0%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>20</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>4-8°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- 2. PILSEN -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/Pilsen.jpeg" alt="Copo de cerveja Pilsen em cima de um barril de madeira">
                     <h2>Pilsen</h2>
 
@@ -75,13 +100,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-pilsen.html" aria-label="Saiba mais sobre Pilsen">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Pilsen</strong>
+                                <span>Baixa fermentação • Boêmia</span>
+                            </div>
+                            <p>Estilo leve e refrescante ligado à tradição da Boêmia. Perfeita para qualquer ocasião, com amargor limpo e aroma floral.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>4.8%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>15</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>2-4°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- 3. MUNICH HELLES -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/MunichHelles.jpeg" alt="Copo de cerveja Helles em cima de um barril de madeira">
                     <h2>Munich Helles</h2>
 
@@ -92,13 +141,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-munich-helles.html" aria-label="Saiba mais sobre Munich Helles">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Munich Helles</strong>
+                                <span>Baixa fermentação • Munique</span>
+                            </div>
+                            <p>Cerveja de perfil suave e predominantemente maltado, criada para rivalizar com as pilsners tchecas mantendo o sabor encorpado de Munique.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>5.2%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>18</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>4-7°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- IPA -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/ipa.jpg" alt="Copo de cerveja IPA">
                     <h2>IPA</h2>
 
@@ -109,13 +182,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-ipa.html" aria-label="Saiba mais sobre IPA">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>IPA</strong>
+                                <span>Alta Fermentação • Inglaterra / EUA</span>
+                            </div>
+                            <p>Estilo famoso por seu amargor pronunciado e aroma intenso. Apresenta notas marcantes de lúpulo, que variam de citrinos e resinosos a florais e frutados, acompanhadas por um leve suporte de malte.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>6.5%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>50</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>4-8°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- MARACUJÁ -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/maracuja.jpg" alt="Copo de cerveja de Maracujá">
                     <h2>Maracujá</h2>
 
@@ -126,13 +223,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-maracuja.html" aria-label="Saiba mais sobre Maracujá">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Maracujá</strong>
+                                <span>Alta Fermentação • Brasil</span>
+                            </div>
+                            <p>Estilo leve e refrescante com acidificação e adição direta de maracujá. Apresenta acidez marcante, aroma cítrico e frutado envolvente, ideal para dias quentes.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>4.0%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>5</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>2-4°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- CHOPP DE VINHO -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/chopp.jpg" alt="Copo de Chopp de Vinho">
                     <h2>Chopp de Vinho</h2>
 
@@ -143,13 +264,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-chopp-de-vinho.html" aria-label="Saiba mais sobre Chopp de Vinho">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Chopp de Vinho</strong>
+                                <span>Bebida Mista • Brasil</span>
+                            </div>
+                            <p>Bebida mista e refrescante que combina o chopp claro tradicional com o mosto/suco de vinho tinto. Apresenta sabor adocicado, aroma frutado de uva e baixíssimo amargor.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>5.5%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>0</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>2-4°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- WEISS -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/Weiss.jpeg" alt="Copo de cerveja Weiss em cima de um barril de madeira">
                     <h2>Weiss</h2>
 
@@ -160,14 +305,38 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-weiss.html" aria-label="Saiba mais sobre Weiss">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Weiss</strong>
+                                <span>Alta fermentação • Baviera</span>
+                            </div>
+                            <p>Tradicional cerveja de trigo da Baviera, não filtrada e de aspecto turvo. Destaca-se pelos aromas característicos de banana e cravo.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>5.4%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>12</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>4-7°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
 
                 <!-- RED ALE -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/red.jpg" alt="Copo de cerveja Red Ale">
                     <h2>Red Ale</h2>
 
@@ -178,13 +347,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-red-ale.html" aria-label="Saiba mais sobre Red Ale">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Red Ale</strong>
+                                <span>Alta Fermentação • Irlanda</span>
+                            </div>
+                            <p>Estilo clássico irlandês com marcante tonalidade avermelhada. Destaca-se pelo equilíbrio com notas de malte tostado, caramelo e suave toffee, mantendo um amargor discreto e final limpo.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>5.0%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>25</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>4-8°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- 5. STOUT -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/Stout.jpeg" alt="Copo de cerveja Stout em cima de um barril de madeira">
                     <h2>Stout</h2>
                     
@@ -195,13 +388,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-stout.html" aria-label="Saiba mais sobre Stout">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Stout</strong>
+                                <span>Alta fermentação • Inglaterra</span>
+                            </div>
+                            <p>Estilo escuro, opaco e encorpado. Apresenta notas intensas de café, cacau e chocolate amargo derivados do malte fortemente torrado.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>6.0%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>35</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>8-12°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- PÊSSEGO -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/pessego2.jpg" alt="Copo de cerveja de Pêssego">
                     <h2>Pêssego</h2>
 
@@ -212,13 +429,37 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-pessego.html" aria-label="Saiba mais sobre Pêssego">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Pêssego</strong>
+                                <span>Alta Fermentação • Bélgica / Brasil</span>
+                            </div>
+                            <p>Cerveja frutada e delicada, com presença marcante da polpa do pêssego. Combina sabor aveludado, suave acidez e retrogosto doce e aromático.</p>
+                        </div>
+
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>4.2%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>8</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>2-5°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- KÖLSCH -->
-                <article class="catalog-card catalog-card--summary">
+                <article class="catalog-card" tabindex="0">
                     <img class="catalog-bottle-img" src="./images/kolsch.jpg" alt="Copo de cerveja Kölsch">
                     <h2>Kölsch</h2>
 
@@ -229,11 +470,53 @@
                     </div>
 
                     <div class="catalog-card__footer">
-                        <a class="catalog-card__hint-btn" href="cerveja-kolsch.html" aria-label="Saiba mais sobre Kölsch">Saiba mais</a>
+                        <span class="catalog-card__hint-btn">Saiba mais</span>
                     </div>
 
-                    </article>
+                    <div class="catalog-card__info">
+                        <div>
+                            <div class="catalog-card__info-header">
+                                <strong>Kölsch</strong>
+                                <span>Alta Fermentação • Alemanha</span>
+                            </div>
+                            <p>Estilo tradicional da cidade de Colônia. É uma cerveja clara, leve e extremamente refrescante, combinando a delicadeza de uma lager com sutis notas frutadas de fermentação ale e suave amargor no final.</p>
+                        </div>
 
+                        <div class="catalog-stats">
+                            <div class="catalog-stat-item">
+                                <small>ABV</small>
+                                <strong>4.8%</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>IBU</small>
+                                <strong>22</strong>
+                            </div>
+                            <div class="catalog-stat-item">
+                                <small>TEMP</small>
+                                <strong>2-5°C</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contato" class="catalog-contact section">
+            <div>
+                <p class="eyebrow">CONTATO</p>
+                <h2>Quer saber mais?</h2>
+                <p style="color: var(--muted); margin-top: 12px; max-width: 420px;">Fale com a Beer Maia para tirar dúvidas, consultar disponibilidade ou fazer seu pedido.</p>
+            </div>
+            <div class="contact__cards">
+                <a class="contact-card" href="https://wa.me/5511970183467" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-card__icon">WA</span>
+                    <div><small>WhatsApp</small><strong>+55 11 97018-3467</strong></div>
+                </a>
+                <a class="contact-card" href="https://www.instagram.com/beer_maia/" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-card__icon">IG</span>
+                    <div><small>Instagram</small><strong>@beer_maia</strong></div>
+                </a>
             </div>
         </section>
     </main>
