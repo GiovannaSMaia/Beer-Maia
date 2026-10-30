@@ -1591,3 +1591,93 @@ img {
         transform: none;
     }
 }
+
+/* Separate information pages reuse the existing cards and typography. */
+.side-menu__nav a[aria-current="page"] {
+    color: var(--gold-soft);
+    background: var(--panel);
+}
+
+.detail-page .history,
+.detail-page .contact {
+    padding-top: 155px;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 32px;
+    padding-bottom: 100px;
+}
+
+.product-detail__photo .catalog-bottle-img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+}
+
+.product-detail__card {
+    min-width: 0;
+    min-height: 0;
+    gap: 24px;
+}
+
+.product-detail__card .catalog-card__info {
+    position: static;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    pointer-events: auto;
+    overflow: visible;
+}
+
+.product-detail__card:hover,
+.product-detail__card:hover .catalog-card__info,
+.product-detail__card:focus-within .catalog-card__info {
+    transform: none;
+}
+
+.product-detail__card .catalog-card__meta {
+    margin-top: 0;
+}
+
+.catalog-card--summary .catalog-card__footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.catalog-card--summary .catalog-card__hint-btn {
+    min-height: 44px;
+    width: 100%;
+}
+
+.catalog-card__hint-btn:focus-visible,
+.button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+@media (max-width: 680px) {
+    .detail-page .history,
+    .detail-page .contact {
+        padding-top: 112px;
+    }
+
+    .product-detail {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding-bottom: 64px;
+    }
+
+    .product-detail__photo .catalog-bottle-img {
+        aspect-ratio: 4 / 3;
+    }
+}
